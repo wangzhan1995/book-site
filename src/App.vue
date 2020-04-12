@@ -1,12 +1,9 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
+
 
 <style lang="less">
 #app {
@@ -16,17 +13,31 @@
   text-align: center;
   color: #2c3e50;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+a{
+  text-decoration: none;
 }
+li{
+  list-style: none;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+.el-header{
+  padding: 0 !important;
+  height: 210px !important;
+}
+.el-main{
+  padding: 0 !important;
+}
+
+
 </style>
+<script>
+  import TopBar from "./components/TopBar";
+  import MyHeader from "./components/MyHeader";
+  import MyFooter from "./components/MyFooter";
+  export default {
+    components: {MyFooter, MyHeader, TopBar}
+  }
+</script>
